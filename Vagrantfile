@@ -65,7 +65,7 @@ $kube_master_instances ||= $num_instances == 1 ? $num_instances : ($num_instance
 # All nodes are kube nodes
 $kube_node_instances ||= $num_instances
 # The following only works when using the libvirt provider
-$kube_node_instances_with_disks ||= false
+$kube_node_instances_with_disks ||= true
 $kube_node_instances_with_disks_size ||= "20G"
 $kube_node_instances_with_disks_number ||= 2
 $override_disk_size ||= false
@@ -200,7 +200,7 @@ Vagrant.configure("2") do |config|
       end
 
       ip = "#{$subnet}.#{i+100}"
-      node.vm.network :private_network, ip: ip,
+      node.vm.network "private_network", ip: ip,
         :libvirt__guest_ipv6 => 'yes',
         :libvirt__ipv6_address => "#{$subnet_ipv6}::#{i+100}",
         :libvirt__ipv6_prefix => "64",
