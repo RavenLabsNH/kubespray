@@ -46,8 +46,8 @@ end
 $num_instances ||= 3
 $instance_name_prefix ||= "kube"
 $vm_gui ||= false
-$vm_memory ||= 4096
-$vm_cpus ||= 4
+$vm_memory ||= 10240
+$vm_cpus ||= 6
 $shared_folders ||= {}
 $forwarded_ports ||= {}
 $subnet ||= "172.18.8"
