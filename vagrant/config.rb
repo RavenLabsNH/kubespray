@@ -1,0 +1,19 @@
+$instance_name_prefix = "kube"
+$num_instances = 5
+$etcd_instances = 3
+$kube_node_instances = 3
+$kube_master_instances = 2
+$vm_memory = 10240
+$vm_cpus = 6
+$kube_node_instances_with_disks = true
+$kube_node_instances_with_disks_size = "50G"
+$kube_node_instances_with_disks_number = 3
+$override_disk_size = true
+$disk_size = "40GB"
+$os = "ubuntu2004"
+$subnet = "10.0.20"
+$network_plugin = "calico"
+$inventory = "inventory/multi_disk_lab"
+$multi_networking = "False"
+$shared_folders = { 'temp/docker_rpms' => "/var/cache/yum/x86_64/7/docker-ce/packages" }
+$ansible_verbosity = "-vv"

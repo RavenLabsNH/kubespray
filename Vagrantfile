@@ -44,10 +44,10 @@ end
 
 # Defaults for config options defined in CONFIG
 $num_instances ||= 3
-$instance_name_prefix ||= "kube"
+$instance_name_prefix ||= "k8s"
 $vm_gui ||= false
-$vm_memory ||= 10240
-$vm_cpus ||= 6
+$vm_memory ||= 2048
+$vm_cpus ||= 2
 $shared_folders ||= {}
 $forwarded_ports ||= {}
 $subnet ||= "172.18.8"
@@ -66,15 +66,15 @@ $kube_master_instances ||= $num_instances == 1 ? $num_instances : ($num_instance
 $kube_node_instances ||= $num_instances
 # The following only works when using the libvirt provider
 $kube_node_instances_with_disks ||= true
-$kube_node_instances_with_disks_size ||= "50G"
+$kube_node_instances_with_disks_size ||= "20G"
 $kube_node_instances_with_disks_number ||= 2
 $override_disk_size ||= false
-$disk_size ||= "40GB"
+$disk_size ||= "20GB"
 $local_path_provisioner_enabled ||= "False"
 $local_path_provisioner_claim_root ||= "/opt/local-path-provisioner/"
 $libvirt_nested ||= false
 # boolean or string (e.g. "-vvv")
-$ansible_verbosity ||= "-vv"
+$ansible_verbosity ||= false
 $ansible_tags ||= ENV['VAGRANT_ANSIBLE_TAGS'] || ""
 
 $playbook ||= "cluster.yml"
